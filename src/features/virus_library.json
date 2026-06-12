@@ -1,0 +1,26 @@
+{
+  "hbv_wildtype": {
+    "name": "Hepatitis B virus (wild-type)",
+    "replication_rate": 0.4,
+    "cytopathic_effect": 0.3,
+    "interferon_antagonism": 0.4,
+    "receptor": "NTCP",
+    "cell_type": "hepatocyte"
+  },
+  "hbv_ymdd": {
+    "name": "HBV YMDD mutant (M550V/L526M)",
+    "replication_rate": 0.7,
+    "cytopathic_effect": 0.8,
+    "interferon_antagonism": 0.6,
+    "receptor": "NTCP",
+    "cell_type": "hepatocyte"
+  },
+  "adenovirus_5": {
+    "name": "Adenovirus type 5",
+    "replication_rate": 0.6,
+    "cytopathic_effect": 1.0,
+    "interferon_antagonism": 0.3,
+    "receptor": "CAR",
+    "cell_type": "hepatocyte"
+  }
+}

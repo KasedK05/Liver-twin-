@@ -1,0 +1,77 @@
+{
+  "entecavir": {
+    "class": "antiviral",
+    "mechanism": "HBV polymerase inhibitor",
+    "ec50_nM": 3.0,
+    "ic50_nM": 2.5,
+    "half-life_h": 15.0,
+    "target_subsystems": [
+      "genetic",
+      "energy"
+    ],
+    "dose_range": [
+      0.3,
+      1.0
+    ]
+  },
+  "dexamethasone": {
+    "class": "anti-inflammatory",
+    "mechanism": "Suppresses TNF-\u03b1, IL-6, iNOS; inhibits NF-\u03baB",
+    "ec50_nM": 250.0,
+    "ic50_nM": 180.0,
+    "half-life_h": 36.0,
+    "target_subsystems": [
+      "defense",
+      "signaling"
+    ],
+    "dose_range": [
+      0.2,
+      1.0
+    ]
+  },
+  "NAC": {
+    "class": "antioxidant",
+    "mechanism": "Glutathione precursor; ROS scavenger",
+    "ec50_uM": 500.0,
+    "ic50_uM": 450.0,
+    "half-life_h": 5.5,
+    "target_subsystems": [
+      "defense",
+      "genetic"
+    ],
+    "dose_range": [
+      0.3,
+      1.0
+    ]
+  },
+  "rotenone": {
+    "class": "mito_toxin",
+    "mechanism": "Complex I inhibitor; disrupts ETC",
+    "ec50_uM": 10.0,
+    "ic50_uM": 8.0,
+    "half-life_h": 2.0,
+    "target_subsystems": [
+      "energy",
+      "membrane"
+    ],
+    "dose_range": [
+      0.2,
+      1.0
+    ]
+  },
+  "bortezomib": {
+    "class": "proteasome_inhibitor",
+    "mechanism": "Inhibits 26S proteasome; triggers ER stress/UPR",
+    "ec50_nM": 100.0,
+    "ic50_nM": 80.0,
+    "half-life_h": 9.0,
+    "target_subsystems": [
+      "protein",
+      "waste"
+    ],
+    "dose_range": [
+      0.2,
+      1.0
+    ]
+  }
+}
