@@ -1,0 +1,66 @@
+# Mode 2: Dataset Generation Configuration
+generation:
+  simulation:
+    t_max: 24.0
+    dt: 0.5
+    n_steps: 49
+    batch_size: 512
+    device: "cuda"
+
+  classes:
+    names: ["CVR", "BRT", "PVR", "VBR", "TRF", "SMR"]
+    target_distribution:
+      CVR: 0.17
+      BRT: 0.17
+      PVR: 0.17
+      VBR: 0.17
+      TRF: 0.17
+      SMR: 0.16
+
+  noise:
+    training:
+      instrument_noise_sigma: 0.02
+      count_noise: true
+      saturation_clip: [0.0, 1.0]
+      timepoint_dropout: 0.15
+      variable_dropout: 0.10
+      endpoint_censoring: 0.30
+      batch_effects: true
+      n_labs: 3
+      label_noise: 0.02
+
+    validation:
+      instrument_noise_sigma: 0.01
+      count_noise: false
+      timepoint_dropout: 0.05
+      variable_dropout: 0.0
+      endpoint_censoring: 0.0
+      batch_effects: false
+      label_noise: 0.0
+
+    test:
+      instrument_noise_sigma: 0.0
+      count_noise: false
+      timepoint_dropout: 0.0
+      variable_dropout: 0.0
+      endpoint_censoring: 0.0
+      batch_effects: false
+      label_noise: 0.0
+      augmentation: false
+
+  augmentation:
+    max_ratio: 0.10
+    jitter_sigma: 0.015
+    methods: ["jitter"]
+
+  split:
+    train: 0.70
+    val: 0.15
+    test: 0.15
+    stratify: true
+    random_seed: 42
+
+  scales:
+    small: 10000
+    medium: 50000
+    large: 200000

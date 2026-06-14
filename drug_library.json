@@ -1,0 +1,60 @@
+{
+  "entecavir": {
+    "name": "Entecavir",
+    "class": "antiviral",
+    "mechanism": "HBV polymerase inhibitor; deoxyguanosine analog",
+    "ec50_nM": 3.0,
+    "ic50_nM": 3.0,
+    "target_pathways": ["viral_replication", "reverse_transcription"],
+    "target_subsystems": ["genetic", "energy"],
+    "mitochondrial_toxicity": false,
+    "ros_generation": false,
+    "dose_range": [0.2, 0.8]
+  },
+  "dexamethasone": {
+    "name": "Dexamethasone",
+    "class": "anti-inflammatory",
+    "mechanism": "Glucocorticoid receptor agonist; suppresses NF-kB, TNF-alpha, IL-6",
+    "ec50_nM": 250.0,
+    "ic50_nM": 250.0,
+    "target_pathways": ["inflammation", "immune_response"],
+    "target_subsystems": ["defense", "signaling"],
+    "mitochondrial_toxicity": false,
+    "ros_generation": false,
+    "dose_range": [0.3, 0.8]
+  },
+  "NAC": {
+    "name": "N-acetylcysteine",
+    "class": "antioxidant",
+    "mechanism": "Glutathione precursor; ROS scavenger; mitochondrial protector",
+    "ec50_uM": 500.0,
+    "ic50_uM": 500.0,
+    "target_pathways": ["oxidative_stress", "detoxification"],
+    "target_subsystems": ["defense", "genetic"],
+    "mitochondrial_toxicity": false,
+    "ros_generation": false,
+    "dose_range": [0.4, 0.8]
+  },
+  "rotenone": {
+    "name": "Rotenone",
+    "class": "mito_toxin",
+    "mechanism": "Complex I inhibitor; disrupts electron transport chain",
+    "ic50_uM": 10.0,
+    "target_pathways": ["mitochondrial_respiration"],
+    "target_subsystems": ["energy", "membrane"],
+    "mitochondrial_toxicity": true,
+    "ros_generation": true,
+    "dose_range": [0.3, 1.0]
+  },
+  "bortezomib": {
+    "name": "Bortezomib",
+    "class": "proteasome_inhibitor",
+    "mechanism": "26S proteasome inhibitor; triggers ER stress/UPR",
+    "ic50_nM": 100.0,
+    "target_pathways": ["protein_degradation", "ER_stress"],
+    "target_subsystems": ["protein", "waste"],
+    "mitochondrial_toxicity": false,
+    "ros_generation": true,
+    "dose_range": [0.3, 1.0]
+  }
+}

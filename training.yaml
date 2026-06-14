@@ -1,0 +1,67 @@
+# Mode 3: Model Training Configuration
+training:
+  architectures:
+    lstm_small:
+      hidden_dim: 128
+      num_layers: 2
+      bidirectional: false
+      dropout: 0.2
+      batch_size: 32
+      epochs: 50
+      lr: 0.001
+      weight_decay: 0.01
+      precision: "fp32"
+      dataset_scale: "small"
+
+    lstm_large:
+      hidden_dim: 256
+      num_layers: 4
+      bidirectional: true
+      dropout: 0.2
+      batch_size: 16
+      epochs: 50
+      lr: 0.001
+      weight_decay: 0.01
+      precision: "fp32"
+      dataset_scale: "medium"
+
+    transformer:
+      d_model: 128
+      nhead: 4
+      num_layers: 4
+      dim_feedforward: 512
+      dropout: 0.2
+      batch_size: 16
+      epochs: 50
+      lr: 0.001
+      weight_decay: 0.01
+      precision: "fp16"
+      dataset_scale: "medium"
+
+  optimizer:
+    name: "AdamW"
+    lr: 0.001
+    weight_decay: 0.01
+
+  scheduler:
+    name: "CosineAnnealingLR"
+    T_max: 50
+
+  loss:
+    overall_weight: 0.5
+    mechanism_weight: 0.3
+    subsystem_weight: 0.2
+    class_weight_beta: 0.999
+
+  early_stopping:
+    patience: 10
+    monitor: "val_overall_acc"
+    mode: "max"
+
+  gradient_clip: 1.0
+
+  reproducibility:
+    torch_seed: 42
+    numpy_seed: 42
+    random_seed: 42
+    cudnn_deterministic: true

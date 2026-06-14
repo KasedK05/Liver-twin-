@@ -1,0 +1,35 @@
+{
+  "hbv_wildtype": {
+    "name": "Hepatitis B Virus (wild-type)",
+    "replication_rate": 0.4,
+    "cytopathic_effect": 0.3,
+    "interferon_antagonism": 0.2,
+    "receptor": "NTCP",
+    "tropism": "hepatocyte"
+  },
+  "hbv_ymdd": {
+    "name": "HBV YMDD mutant (M204V)",
+    "replication_rate": 0.7,
+    "cytopathic_effect": 0.8,
+    "interferon_antagonism": 0.6,
+    "receptor": "NTCP",
+    "tropism": "hepatocyte",
+    "resistance": "lamivudine/entecavir"
+  },
+  "adenovirus_5": {
+    "name": "Adenovirus Type 5",
+    "replication_rate": 0.6,
+    "cytopathic_effect": 1.0,
+    "interferon_antagonism": 0.4,
+    "receptor": "CAR",
+    "tropism": "respiratory_epithelial"
+  },
+  "viral_mild": {
+    "name": "Mild viral strain",
+    "replication_rate": 0.2,
+    "cytopathic_effect": 0.1,
+    "interferon_antagonism": 0.1,
+    "receptor": "generic",
+    "tropism": "hepatocyte"
+  }
+}

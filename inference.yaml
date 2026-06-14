@@ -1,0 +1,31 @@
+# Mode 4: Inference Configuration
+inference:
+  test_data_path: "data/test/trajectories.npz"
+  models:
+    - "outputs/lstm_small/best.pt"
+    - "outputs/lstm_large/best.pt"
+    - "outputs/transformer/best.pt"
+
+  strict_rules:
+    raw_test_only: true
+    no_retraining: true
+    no_hyperparam_tuning: true
+    no_data_leakage: true
+
+  evaluation_metrics:
+    - "overall_accuracy"
+    - "f1_macro"
+    - "auc_roc"
+    - "brier_score"
+    - "mechanism_accuracy"
+    - "subsystem_mae"
+
+  interpretability:
+    attention_maps: true
+    subsystem_importance: true
+    time_step_importance: true
+
+  output:
+    report_path: "reports/inference_report.md"
+    metrics_path: "reports/test_metrics.json"
+    figures_dir: "reports/figures/"

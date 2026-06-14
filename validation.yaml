@@ -1,0 +1,72 @@
+# Mode 1: Pre-Run Validation Configuration
+validation:
+  biological_checks:
+    baseline_stability:
+      description: "Healthy cell maintains ATP > 0.5 for 24h"
+      expected: "ATP_final > 0.5"
+      threshold: 0.5
+
+    antiviral_efficacy:
+      description: "Entecavir 0.8 + HBV wild-type improves ATP"
+      expected: "ATP_treatment > ATP_baseline"
+      drug: "entecavir"
+      dose: 0.8
+      virus: "hbv_wildtype"
+
+    temporal_ordering:
+      description: "ROS peaks before interferon"
+      expected: "t_ROS < t_IFN"
+      ros_threshold: 0.3
+      ifn_threshold: 0.3
+
+    mito_toxin_collapse:
+      description: "Rotenone 1.0 collapses ATP"
+      expected: "ATP_final < 0.1"
+      drug: "rotenone"
+      dose: 1.0
+
+    dna_repair_activation:
+      description: "Viral infection triggers DNA repair"
+      expected: "repair_max > 0.15"
+      virus: "hbv_ymdd"
+
+    upr_activation:
+      description: "Bortezomib triggers UPR"
+      expected: "UPR_max > 0.5"
+      drug: "bortezomib"
+      dose: 1.0
+
+    membrane_damage:
+      description: "Adenovirus damages membrane"
+      expected: "membrane_final < 0.5"
+      virus: "adenovirus_5"
+
+    autophagy_compensation:
+      description: "Moderate rotenone triggers autophagy"
+      expected: "autophagy_max > 0.15"
+      drug: "rotenone"
+      dose: 0.5
+
+    p53_activation:
+      description: "HBV YMDD activates p53"
+      expected: "p53_max > 0.5"
+      virus: "hbv_ymdd"
+
+    decline_presence:
+      description: "At least one decline trajectory in 20-sample test"
+      expected: "decline_count > 0"
+      sample_size: 20
+
+  computational_checks:
+    gpu_available: true
+    min_vram_gb: 6
+    parameter_bounds: [0.001, 1.0]
+    numerical_stability: true
+    determinism: true
+
+  data_pipeline_checks:
+    drug_library_complete: true
+    virus_library_complete: true
+    feature_mapping_valid: true
+    coupling_coverage: true
+    classifier_ready: true
